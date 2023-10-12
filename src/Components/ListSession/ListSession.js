@@ -3,6 +3,7 @@ import "./ListSession.css";
 import handleLogo from './../../Assets/Images/handle.svg';
 import ListLesson from "../ListLesson/ListLesson";
 import logoAction from './../../Assets/Images/horisontal.svg';
+import editLogo from './../../Assets/Images/Edit.svg';
 import ButtonAction from "../ButtonAction/ButtonAction";
 import Ddown from "../Dropdown/Ddown";
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, Stack, TextField } from "@mui/material";
@@ -41,6 +42,8 @@ const ListSession = (props) => {
     const [initData, setInitData] = useState(initialData['session']);
     const [sessionName, setSessionName] = useState('');
     const [open, openchange]=useState(false);
+    const [type, setType] = useState('');
+    const [selected, setSelected] = useState('');
 
     useEffect(() => {}, [initData]);
 
@@ -70,19 +73,24 @@ const ListSession = (props) => {
       setInitData(initData.filter(item => item !== e))
     }
 
-    const addSession = () => {
+    const addSession = (e) => {
         openchange(true);
+        setType(e);
     } 
 
     const onSaveSession = (e) => {
       e.preventDefault();
-      openchange(false);
+      if (type === 'add') {
         const newSession = 
             {
                 "session_name": sessionName,
                 "lesson": []
             }
         setInitData([...initData, newSession])
+      } else {
+        setSelected(selected.session_name = sessionName);
+      }
+      openchange(false);
     }
 
     const sendData = (data) => {
@@ -91,6 +99,12 @@ const ListSession = (props) => {
 
     const closepopup = ()=>{
       openchange(false);
+    }
+
+    const editname = (data, type) => {
+      setType(type);
+      setSelected(data);
+      openchange(true);
     }
 
     return(
@@ -106,6 +120,9 @@ const ListSession = (props) => {
                             <div className="session-title">
                                 <span>{item.session_name}</span>
                             </div>
+                            <div className="edit-name">
+                              <img src={editLogo} alt="" onClick={() => {editname(item,'edit')}}/>
+                            </div>
                         </div>
                         <div className="action-session">
                           <Ddown logo={logoAction} onClick={() => deleteSession(item)}/>
@@ -118,10 +135,10 @@ const ListSession = (props) => {
                 </>
             )) : null}
         <div className="action">
-            <ButtonAction icons="add-session" onClick={() => addSession()}/>
+            <ButtonAction icons="add-session" onClick={() => addSession('add')}/>
             <Dialog 
                 open={open} onClose={closepopup} fullWidth maxWidth="sm">
-                <DialogTitle>Add Lesson  <IconButton onClick={closepopup} style={{float:'right'}}><CloseIcon color="primary"></CloseIcon></IconButton>  </DialogTitle>
+                <DialogTitle> <> { type === 'add' ? 'Add Session' : 'Edit Session'}</>  <IconButton onClick={closepopup} style={{float:'right'}}><CloseIcon color="primary"></CloseIcon></IconButton>  </DialogTitle>
                 <DialogContent>
                   <form noValidate autoComplete="off" onSubmit={onSaveSession}>
                     <Stack spacing={2} margin={2}>
