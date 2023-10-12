@@ -78,10 +78,10 @@ function ListLesson(props) {
     <div className="app">
       <div className="list-sort">
         {dataLesson.map((item, index) => (
-          <div key={index} id={index} className="list-item" draggable onDragStart={(e) => (dragItem.current = index)} onDragEnter={(e) => (dragOverItem.current = index)} onClick={() => {handleDetail(item)}} onDragEnd={handleSort} onDragOver={(e) => e.preventDefault()}>
+          <div key={index} id={index} className="list-item" draggable onDragStart={(e) => (dragItem.current = index)} onDragEnter={(e) => (dragOverItem.current = index)} onDragEnd={handleSort} onDragOver={(e) => e.preventDefault()}>
             <div className="container">
               <div className="item-content">
-                <div className="left-session">
+                <div className="left-session" onClick={() => {handleDetail(item)}}>
                   <div className="content-img-handle">
                     <img src={handleLogo} alt="" />
                   </div>
@@ -141,8 +141,8 @@ function ListLesson(props) {
                       <TextField variant="outlined" label="Lesson Name" onChange={(e) => setLessonName(e.target.value)}></TextField>
                       <TextField variant="outlined" label="Lesson Status" onChange={(e) => setLessonStatus(e.target.value)}></TextField>
                       <TextField variant="outlined" label="Preview" onChange={(e) => setLessonPreview(e.target.value)}></TextField>
-                      <TextField variant="outlined" label="Date" onChange={(e) => setLessonDate(e.target.value)}></TextField>
-                      <TextField variant="outlined" label="Time" onChange={(e) => setLessonTime(e.target.value)}></TextField>
+                      <TextField variant="outlined" placeholder="24 Oktober 2021, 16.30" label="Date" onChange={(e) => setLessonDate(e.target.value)}></TextField>
+                      <TextField variant="outlined" label="Time" placeholder="06:00" onChange={(e) => setLessonTime(e.target.value)}></TextField>
                       <Button color="primary" variant="contained" type="submit">Submit</Button>
                     </Stack>
                   </form>

@@ -10,7 +10,7 @@ function ItemDetail(props) {
         </div> 
        : 
         <div className="empty">
-            <p>empty data: please click some lesson to see the detail</p>
+            <p>Oooopss: Please click on a lesson name to see the details</p>
         </div>
         }
         </>
