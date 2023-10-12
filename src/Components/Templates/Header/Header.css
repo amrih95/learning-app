@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+    border-bottom: 1px solid #DFE5EE;
+    box-shadow: 0px 4px 34px 0px #271A490D;
+    padding: 14px;
+    margin-bottom: 42px;
+    align-items: center;
+}
+
+.arrow-back {
+    margin-left: 98px;
+}
+
+.vector {
+    margin-left: 18px;
+    margin-right: 14px;
+}
+
+.breadcrumb_header {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
+}

@@ -1,0 +1,98 @@
+.item-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+}
+
+.left-session {
+    display: flex;
+    align-items: center;
+}
+
+.right-session {
+    display: flex;
+    align-items: center;
+}
+
+.content-img-handle img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.content-img-video img {
+    width: 48px;
+    height: 48px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.content-title {
+    size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.content-status {
+    color: #7800EF;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.separation {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.content-preview {
+    size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.date-time-item span {
+    size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.date-time-item img {
+    width: 24px;
+    height: 24px;
+    margin-right: 9px;
+}
+
+.download-item span {
+    size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.download-item img {
+    width: 24px;
+    height: 24px;
+    margin-left: 9px;
+    margin-right: 9px;
+}
+
+.button-action {
+    position: relative;
+    text-align: left;
+    margin-top: 20px;
+}
+.button-action span {
+    font-size: 16px;
+    font-weight: 500;
+    align-items: center;
+    margin-left: 8px;
+}
+
+.action-lesson {
+    background-color: #F6F8FC;
+    padding: 0px;
+    border-radius: 8px;
+    margin-left: 18px;
+    cursor: pointer;
+}
