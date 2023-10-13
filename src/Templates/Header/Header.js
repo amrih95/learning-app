@@ -1,6 +1,6 @@
 import React from "react";
-import line from '../../../Assets/Images/Line.svg';
-import vector from '../../../Assets/Images/Vector.svg';
+import line from '../../Assets/Images/Line.svg';
+import vector from '../../Assets/Images/Vector.svg';
 import './Header.css';
 
 const Header = () => {
