@@ -4,6 +4,7 @@ import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import ItemDetail from "../ItemDetail/ItemDetail";
 import ListSession from "../ListSession/ListSession";
+import './ItemTabs.css'
 
 export default function ItemTabs(props) {
   const [value, setValue] = useState(0);
